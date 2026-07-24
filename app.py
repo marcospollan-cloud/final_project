@@ -14,6 +14,10 @@ def load_config(path='config.json'):
 	with open(path, 'r') as f:
 		return json.load(f)
 
+@app.get('/api/welcome')
+def welcome():
+	return 'Welcome to my Flask Diagnostic Application'
+
 @app.get('/api/health')
 def health():
 	return jsonify({'status': 'ok'})
